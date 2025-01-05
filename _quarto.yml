@@ -1,0 +1,25 @@
+project:
+  type: website
+
+website:
+  title: "Noah Geller"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Blog
+        href: blog.qmd
+format:
+  html:
+    grid: 
+      body-width: 1100px
+    theme: [flatly, theme-light.scss]
+    mainfont: Noto Sans
+    fontsize: 25px
+    toc: true
+    toc-location: left-body 
+    toc-title: Contents
+    toc-expand: 2 
+    code-fold: show
+    code-copy: true 
+    code-overflow: scroll

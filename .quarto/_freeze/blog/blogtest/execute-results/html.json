@@ -1,0 +1,17 @@
+{
+  "hash": "35bea1abdf6c4158baea849aa45b4647",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Title\"\nauthor: \"Noah Geller\"\ndate: \"09/28/24\"\ndate-modified: \"09/28/24\" \nabstract-title: \"Summary\"\nabstract: \"Put Summary Here\"\ncategories:\n  - test cat \nformat:\n  html:\n    toc: true\n    toc-location: left-body \n    toc-title: Contents\n    toc-expand: 2 \n    number-sections: true\n    code-fold: show\n    code-copy: true \n    code-tools: true\n    highlight-style: nord\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nx <- c(1,2,3)\nmean(x)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n```{.python .cell-code}\nimport numpy as np \nimport matplotlib.pyplot as plt\nx = np.random.rand(100)\nplt.plot(x)\nplt.show()\n```\n\n::: {.cell-output-display}\n![](blogtest_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "blogtest_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,1 @@
+Play around with random seeds and show how difference in resulting models. Try averaging them and show what happens. 

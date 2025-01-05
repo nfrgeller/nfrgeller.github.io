@@ -1,0 +1,40 @@
+---
+execute:
+  echo: true
+  eval: true
+  warning: true
+  error: true 
+  cache: true
+title: "The EM Algorithm"
+author: "Noah Geller"
+date: "10/12/24"
+categories:
+  - Data Science 
+  - Statistics 
+---
+Suppose that you are presented with a dataset 
+
+
+```{python}
+#| echo: false
+
+import pandas as pd
+import numpy as np 
+
+df = pd.DataFrame({
+  "X": np.random.randn(10),
+  "Y": np.random.randn(10)
+})
+
+nan_x = np.random.choice(np.arange(10), size = 3, replace = False)
+
+nan_y = np.random.choice(np.arange(10), size = 2, replace = False)
+
+for i in nan_x:
+  df.iloc[i].X = np.nan
+
+for i in nan_y:
+  df.iloc[i].Y = np.nan
+
+df
+```
