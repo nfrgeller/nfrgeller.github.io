@@ -13,8 +13,8 @@ format:
   html:
     grid: 
       body-width: 1100px
-    theme: [flatly, theme-light.scss]
-    mainfont: Noto Sans
+    theme: [flatly, theme-dark.scss]
+    # mainfont: Noto Sans
     fontsize: 25px
     toc: true
     toc-location: left-body 

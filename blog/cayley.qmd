@@ -11,7 +11,6 @@ categories:
   - Math
   - Algebra
 ---
-
 In this note I want to review the Cayley-Hamilton theorem for fields and explain how it easily generalizes to the setting of commutative rings. I will then use this more general form of the theorem to prove Nakayama's lemma.
 
 **Theorem 1**: Let $k$ be a field and let $A\in k^{n\times n}$ be a square matrix with entries in $k$. Let $p\in k[t]$ be the characteristic polynomial of $A$, i.e. $p(t) = \text{det}(t\text{Id}-A)$. Then, $p(A)=0$.
@@ -22,7 +21,7 @@ Define $\psi:k^n\to k$ to be the map which takes a square matrix to the discrimi
 
 Because we have shown that the Cayley-Hamilton theorem holds for all fields, it is straightforward to check that it holds for any ring which is contained inside a field. This shows that it holds for all integral domains, since they sit inside their field of fractions. It turns out this is enough to deduce the general result for arbitrary commutative rings, as we can take advantage of the universal property of $\mathbb{Z}$ as the initial object in the category of commutative rings. 
 
-**Theorem**: Let $R$ be a commutative ring and let $A$ be an $n\times n$ matrix with entries in $R$. Let $p_A(t)\in R[t]$ be the characteristic polynomial of $A$, i.e. $p_A(t) = \det(t\text{Id}-A)$. Then, $p_A(A)=0$.
+**Theorem**: Let $R$ be a commutative ring and let $A$ be an $n\times n$ matrix with entries in $R$. Let $p_A(t)\in R[t]$ be the characteristic polynomial of $A,$ i.e. $p_A(t) = \det(t\text{Id}-A)$. Then, $p_A(A)=0$.
 
 *Proof*: Let $S = \mathbb{Z}[\{x_{ij}\}_{i,j=1}^n]$ be the polynomial ring in $n^2$ variables with integer coefficients. Define $\theta:S\to R$ to be the ring homomorphism which sends each indeterminate $x_{ij}$ to the matrix entry $A_{ij}\in R$. Let $X$ be the matrix of indeterminates, so $X_{ij}=x_{ij}$. Because $S$ is a domain, it embeds into its field of fractions, $\mathbb{Q}(\{x_{ij}\}_{i,j=1}^n)$, so $p_X(X)=0$. Because the coefficients of the characteristic polynomial of a matrix are polynomials in the entries of that matrix, we have that 
 
