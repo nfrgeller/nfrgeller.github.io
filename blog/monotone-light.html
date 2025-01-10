@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Noah Geller">
+<meta name="dcterms.date" content="2024-10-12">
+
+<title>Monotone Light Factorizations – Noah Geller</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Noah Geller</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Monotone Light Factorizations</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+  <div class="quarto-categories">
+    <div class="quarto-category">Math</div>
+    <div class="quarto-category">Topology</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Noah Geller </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 12, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>We will show that any continuous map <span class="math inline">\(f:X\to Y\)</span> of compact Hausdorff spaces can be factored into a composition of two maps where one has connected fibers and the other has totally disconnected fibers. To start, we introduce some terminology and preliminary facts.</p>
+<p><strong>Definition</strong>: Let <span class="math inline">\(X\)</span> be a topological space. A decomposition of <span class="math inline">\(X\)</span> is a partition of <span class="math inline">\(X\)</span> into compact subsets <span class="math inline">\(\{C_\alpha\}\)</span>. The decomposition <span class="math inline">\(\{C_\alpha\}\)</span> is upper semi-continuous if whenever a decomposition element <span class="math inline">\(C_\alpha\)</span> is contained in an open set <span class="math inline">\(U,\)</span> there exists another open set <span class="math inline">\(V\subset U\)</span> which also contains <span class="math inline">\(C_\alpha\)</span> and has the property that for any other <span class="math inline">\(C_\beta,\)</span> if <span class="math inline">\(C_\beta\cap V\neq \emptyset\)</span> then <span class="math inline">\(C_\beta\subset V.\)</span></p>
+<p>The condition to be a USC-decomposition looks a bit strange at first, but we shall see that it is exceedingly convenient and also not too difficult to satisfy in practice.</p>
+<p>For <span class="math inline">\(X\)</span> a topological space and <span class="math inline">\(\mathcal{D} = \{C_\alpha\}\)</span> an upper semi-continuous decomposition, we write <span class="math inline">\(X/\mathcal{D}\)</span> for the quotient space where each decomposition element <span class="math inline">\(C_\alpha\in \mathcal{D}\)</span> is collapsed to a point. As we will see, the condition that <span class="math inline">\(\mathcal{D}\)</span> is upper semi-continuous is equivalent to <span class="math inline">\(X/\mathcal{D}\)</span> being Hausdorff.</p>
+<p><strong>Lemma</strong>: Let <span class="math inline">\(X\)</span> be a topological space, <span class="math inline">\(\{C_\alpha\}\)</span> an upper semi-continuous decomposition, and <span class="math inline">\(U\subset X\)</span> an open set. Then, the union of all the decomposition elements contained in <span class="math inline">\(U\)</span> is an open set.</p>
+<p><em>Proof</em>: Let <span class="math inline">\(I = \{\alpha \mid C_\alpha\subset U\}\)</span> and let <span class="math inline">\(V = \bigcup_{\alpha\in I}C_\alpha.\)</span> Let <span class="math inline">\(x\in V\)</span> be arbitrary. Then, there is some <span class="math inline">\(C_\alpha\)</span> such that <span class="math inline">\(x\in C_\alpha\subset U.\)</span> Because the decomposition <span class="math inline">\(\{C_\alpha\}\)</span> is USC, there exists an open set <span class="math inline">\(U'\subset U\)</span> such that <span class="math inline">\(x\in C_\alpha\subset U'\subset U\)</span> and if <span class="math inline">\(C_\beta\cap U'\neq \emptyset\)</span> then <span class="math inline">\(C_\beta\subset U'.\)</span> Let <span class="math inline">\(y\in U'.\)</span> Since <span class="math inline">\(\{C_\alpha\}\)</span> is a partition of <span class="math inline">\(X\)</span>, there is a unique <span class="math inline">\(C_\beta\)</span> containing <span class="math inline">\(y.\)</span> In particular, this means that <span class="math inline">\(C_\beta\cap U'\)</span> is non-empty so <span class="math inline">\(C_\beta\subset U'\subset U,\)</span> i.e.&nbsp;<span class="math inline">\(y\in V.\)</span> Therefore, <span class="math inline">\(U'\subset V\)</span> is open and contains <span class="math inline">\(x.\)</span> Since <span class="math inline">\(x\in V\)</span> was arbitary, <span class="math inline">\(V\)</span> is an open set.</p>
+<p>Notice that the converse of this Lemma is also true by a very straightforward argument coming from the definition of upper semi-continuity.</p>
+<p><strong>Theorem</strong>: Let <span class="math inline">\(X\)</span> be a compact Hausdorff space and let <span class="math inline">\(\mathcal{D}=\{C_\alpha\}\)</span> be an upper semi-continuous decomposition of <span class="math inline">\(X\)</span>. Then, the quotient space <span class="math inline">\(X/\mathcal{D}\)</span> is also a compact Hausdorff space.</p>
+<p><em>Proof</em>: The quotient space <span class="math inline">\(X/\mathcal{D}\)</span> is automatically compact since the quotient map <span class="math inline">\(p:X\to X/\mathcal{D}\)</span> is surjective and continuous. Let <span class="math inline">\(C_\alpha,C_\beta\in X/\mathcal{D}.\)</span> Because <span class="math inline">\(X\)</span> is Hausdorff and <span class="math inline">\(C_\alpha,C_\beta\subset X\)</span> are compact, they are also closed. Since <span class="math inline">\(X\)</span> is both compact and Hausdorff, it is also normal so there exists disjoint open sets <span class="math inline">\(U_\alpha,V_\alpha \subset X\)</span> such that <span class="math inline">\(C_\alpha\subset U\)</span> and <span class="math inline">\(C_\beta\subset V.\)</span> Let <span class="math inline">\(V_\alpha\)</span> be the union of all of the decomposition elements contained in <span class="math inline">\(U_\alpha\)</span> and let <span class="math inline">\(V_\beta\)</span> be the union of all the decomposition elements contained in <span class="math inline">\(U_\beta.\)</span> The sets <span class="math inline">\(V_\alpha,V_\beta\)</span> are both open by the above lemma. Moreover, <span class="math inline">\(p(V_\alpha)\)</span> and <span class="math inline">\(p(V_\beta)\)</span> are open in <span class="math inline">\(X/\mathcal{D}\)</span> (because of how <span class="math inline">\(V_\alpha,V_\beta\)</span> were constructed) and are disjoint. Thus, <span class="math inline">\(X/\mathcal{D}\)</span> is Hausdorff as desired.</p>
+<p><strong>Corollary 1</strong>: For <span class="math inline">\(X\)</span> a compact Hausdorff space and <span class="math inline">\(\mathcal{D} = \{C_\alpha\}\)</span> a decomposition of <span class="math inline">\(X\)</span>, <span class="math inline">\(\mathcal{D}\)</span> is USC if and only if <span class="math inline">\(X/\mathcal{D}\)</span> is Hausdorff.</p>
+<p><em>Proof</em>: One direction is exactly the theorem we have just proven, so we just need to show that if <span class="math inline">\(X/\mathcal{D}\)</span> is Hausdorff, then <span class="math inline">\(\mathcal{D}\)</span> is USC. Suppose that <span class="math inline">\(X/\mathcal{D}\)</span> is Hausdorff. Since <span class="math inline">\(X\)</span> is compact Hausdorff and <span class="math inline">\(X/\mathcal{D}\)</span> is Hausdorff, the quotient map <span class="math inline">\(p:X\to X/\mathcal{D}\)</span> is a closed map. Let <span class="math inline">\(U\subset X\)</span> be open such that <span class="math inline">\(U\)</span> contains at least one decomposition element. Let <span class="math inline">\(V\)</span> be the union of all decomposition elements contained in the open set <span class="math inline">\(U.\)</span> Then, <span class="math inline">\(p(V)\)</span> is the complement of <span class="math inline">\(p(X\setminus U)\)</span> so <span class="math inline">\(p(V)\)</span> is open in <span class="math inline">\(X/\mathcal{D}.\)</span> Moreover, <span class="math inline">\(V\)</span> is a union of decomposition elements so <span class="math inline">\(p^{-1}(p(V))=V\)</span>, i.e.&nbsp;<span class="math inline">\(V\)</span> is also open in <span class="math inline">\(X\)</span>. Thus, <span class="math inline">\(\mathcal{D}\)</span> is USC.</p>
+<p><strong>Corollary 2</strong>: Let <span class="math inline">\(f:X\to Y\)</span> be a surjective continuous map of compact Hausdorff spaces. Then, <span class="math inline">\(\{f^{-1}(y)\mid y\in Y\}\)</span> is a USC decomposition of <span class="math inline">\(X\)</span>.</p>
+<p><em>Proof</em>: Since <span class="math inline">\(X,Y\)</span> are compact Hausdorff, <span class="math inline">\(f\)</span> is a quotient map and every fiber is compact. Moreovoer, <span class="math inline">\(Y\)</span> being Hausdorff means we can apply Corollary 1 to get that <span class="math inline">\(\{f^{-1}(y)\mid y\in Y\}\)</span> is USC.</p>
+<p>Before tackling the main theorem, we need one more key lemma about USC decompositions which will do most of the work for us in proving the main theorem.</p>
+<p><strong>Key Lemma</strong>: Let <span class="math inline">\(X\)</span> be a compact Hausdorff space and let <span class="math inline">\(\mathcal{D}=\{C_\alpha\}\)</span> be a USC decomposition of <span class="math inline">\(X.\)</span> Let <span class="math inline">\(\mathcal{D}'\)</span> be the decomposition whose elements are the connected components of the elements of <span class="math inline">\(\mathcal{D}.\)</span> Then, <span class="math inline">\(\mathcal{D}'\)</span> is also USC.</p>
+<p><em>Proof</em>: Let <span class="math inline">\(C_\alpha'\in \mathcal{D}'\)</span> be a connected component of some <span class="math inline">\(C_\alpha\in \mathcal{D}\)</span> and suppose that <span class="math inline">\(C_\alpha'\subset U\)</span> for some open <span class="math inline">\(U\subset X.\)</span> Because <span class="math inline">\(C_\alpha\)</span> is compact and Hausdorff, there exists a set <span class="math inline">\(D\)</span> which is clopen in <span class="math inline">\(C_\alpha\)</span> such that <span class="math inline">\(C_\alpha'\subset D\subset (U\cap C_\alpha).\)</span> The set <span class="math inline">\(D\)</span> is open in <span class="math inline">\(C_\alpha\)</span> so there exists an open <span class="math inline">\(U_D\subset X\)</span> such that <span class="math inline">\(D = U_D\cap C_\alpha.\)</span> Moreover, <span class="math inline">\(D\)</span> is contained in <span class="math inline">\(U\)</span> so we can assume that <span class="math inline">\(U_D\subset U\)</span> (if not just intersect them). Because <span class="math inline">\(D\)</span> is clopen in <span class="math inline">\(C_\alpha,\)</span> <span class="math inline">\(D = \overline{U_D}\cap C_\alpha\)</span> as well. In particular, this means that <span class="math inline">\((\overline{U_D}\setminus U_D)\cap C_\alpha = \emptyset.\)</span> Define <span class="math inline">\(U^* = U_D\cup (X\setminus \overline{U_D})\)</span> and note that <span class="math inline">\(U^*\)</span> is a disjoint union of two open sets and it contains <span class="math inline">\(C_\alpha.\)</span> Let <span class="math inline">\(V\)</span> be the union of all the elements in <span class="math inline">\(\mathcal{D}\)</span> which are contained in <span class="math inline">\(U^*.\)</span> Since <span class="math inline">\(\mathcal{D}\)</span> is USC, <span class="math inline">\(V\)</span> is open in <span class="math inline">\(X\)</span>. Let <span class="math inline">\(V'=V\cap U_D\)</span> so <span class="math inline">\(V'\)</span> is open and contains <span class="math inline">\(C_\alpha'.\)</span> Suppose that <span class="math inline">\(C_\beta'\)</span> is a component of some <span class="math inline">\(C_\beta\in \mathcal{D}\)</span> such that <span class="math inline">\(C_\beta\)</span> intersects <span class="math inline">\(V'\)</span> non-trivially. By construction, <span class="math inline">\(C_\beta\)</span> must be contained within <span class="math inline">\(V.\)</span> Moreover, <span class="math inline">\(C_\beta'\)</span> is connected and intersects with <span class="math inline">\(U_D\)</span> so <span class="math inline">\(C_\beta'\)</span> must be contained in <span class="math inline">\(U_D.\)</span> Thus, <span class="math inline">\(C_\beta'\subset V'\subset U_D\subset U.\)</span> The open set <span class="math inline">\(V'\)</span> therefore demonstrates that <span class="math inline">\(\mathcal{D}'\)</span> is USC.</p>
+<p><strong>Definition</strong>: A continuous map <span class="math inline">\(f:X\to Y\)</span> is monotone if all of its fibers are connected.</p>
+<p><strong>Definition</strong>: A continuous map <span class="math inline">\(f:X\to Y\)</span> is light if all of its fibers are totally disconnected.</p>
+<p>We now have all of the ingredients we need to state and prove the Monotone-Light Factorization theorem:</p>
+<p><strong>Theorem (Monotone-Light Factorization)</strong>: Let <span class="math inline">\(f:X\to Y\)</span> be a continuous mapping of compact Hausdorff spaces. Then, there exists a third compact Hausdorff space <span class="math inline">\(Z\)</span> and continuous maps <span class="math inline">\(m:X\to Z\)</span> and <span class="math inline">\(l:Z\to Y\)</span> such that <span class="math inline">\(f = l\circ m\)</span>, <span class="math inline">\(m\)</span> is monotone, and <span class="math inline">\(l\)</span> is light.</p>
+<p><em>Proof</em>: Let <span class="math inline">\(\mathcal{D}\)</span> be the decomposition of <span class="math inline">\(X\)</span> given by the connected components of the fibers of <span class="math inline">\(f.\)</span> Corollary 2 and our Key Lemma guarantee that this is a USC decomposition of <span class="math inline">\(X\)</span>. Let <span class="math inline">\(Z\)</span> be the quotient space <span class="math inline">\(X/\mathcal{D}\)</span> and let <span class="math inline">\(m:X\to Z\)</span> be the quotient map. The space <span class="math inline">\(Z\)</span> is compact Hausdorff by our previous theorem and <span class="math inline">\(m\)</span> is monotone by construction. There is a natural map <span class="math inline">\(l:Z\to Y\)</span> which just takes a component of the fiber <span class="math inline">\(f^{-1}(y)\)</span> to the point <span class="math inline">\(y.\)</span> The map <span class="math inline">\(l\)</span> is light because the collection of components of a fiber <span class="math inline">\(f^{-1}(y)\)</span> will be totally disconnected in the quotient space <span class="math inline">\(Z = X/\mathcal{D}.\)</span></p>
+<p><strong>References</strong>:</p>
+<p>Danny Calegari’s Point Set-Topology Course at UChicago Winter 2023.</p>
+<p>Decompositions of Manifolds by Robert J. Daverman.</p>
+
+
+<!-- -->
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/nfrgeller\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  error: true </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Monotone Light Factorizations"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Noah Geller"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "10/12/24"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - Math</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">  - Topology</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>We will show that any continuous map $f:X\to Y$ of compact Hausdorff spaces can be factored into a composition of two maps where one has connected fibers and the other has totally disconnected fibers. To start, we introduce some terminology and preliminary facts. </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Definition**: Let $X$ be a topological space. A decomposition of $X$ is a partition of $X$ into compact subsets $<span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$. The decomposition $<span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$ is upper semi-continuous if whenever a decomposition element $C_\alpha$ is contained in an open set $U,$ there exists another open set $V\subset U$ which also contains $C_\alpha$ and has the property that for any other $C_\beta,$ if $C_\beta\cap V\neq \emptyset$ then $C_\beta\subset V.$</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>The condition to be a USC-decomposition looks a bit strange at first, but we shall see that it is exceedingly convenient and also not too difficult to satisfy in practice. </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>For $X$ a topological space and $\mathcal{D} = <span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$ an upper semi-continuous decomposition, we write $X/\mathcal{D}$ for the quotient space where each decomposition element $C_\alpha\in \mathcal{D}$ is collapsed to a point. As we will see, the condition that $\mathcal{D}$ is upper semi-continuous is equivalent to $X/\mathcal{D}$ being Hausdorff.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**Lemma**: Let $X$ be a topological space, $<span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$ an upper semi-continuous decomposition, and $U\subset X$ an open set. Then, the union of all the decomposition elements contained in $U$ is an open set. </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>*Proof*: Let $I = <span class="sc">\{</span>\alpha \mid C_\alpha\subset U<span class="sc">\}</span>$ and let $V = \bigcup_{\alpha\in I}C_\alpha.$ Let $x\in V$ be arbitrary. Then, there is some $C_\alpha$ such that $x\in C_\alpha\subset U.$ Because the decomposition $<span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$ is USC, there exists an open set $U'\subset U$ such that $x\in C_\alpha\subset U'\subset U$ and if $C_\beta\cap U'\neq \emptyset$ then $C_\beta\subset U'.$ Let $y\in U'.$ Since $<span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$ is a partition of $X$, there is a unique $C_\beta$ containing $y.$ In particular, this means that $C_\beta\cap U'$ is non-empty so $C_\beta\subset U'\subset U,$ i.e. $y\in V.$ Therefore, $U'\subset V$ is open and contains $x.$ Since $x\in V$ was arbitary, $V$ is an open set. </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Notice that the converse of this Lemma is also true by a very straightforward argument coming from the definition of upper semi-continuity. </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**Theorem**: Let $X$ be a compact Hausdorff space and let $\mathcal{D}=<span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$ be an upper semi-continuous decomposition of $X$. Then, the quotient space $X/\mathcal{D}$ is also a compact Hausdorff space. </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>*Proof*: The quotient space $X/\mathcal{D}$ is automatically compact since the quotient map $p:X\to X/\mathcal{D}$ is surjective and continuous. Let $C_\alpha,C_\beta\in X/\mathcal{D}.$ Because $X$ is Hausdorff and $C_\alpha,C_\beta\subset X$ are compact, they are also closed. Since $X$ is both compact and Hausdorff, it is also normal so there exists disjoint open sets $U_\alpha,V_\alpha \subset X$ such that $C_\alpha\subset U$ and $C_\beta\subset V.$ Let $V_\alpha$ be the union of all of the decomposition elements contained in $U_\alpha$ and let $V_\beta$ be the union of all the decomposition elements contained in $U_\beta.$ The sets $V_\alpha,V_\beta$ are both open by the above lemma. Moreover, $p(V_\alpha)$ and $p(V_\beta)$ are open in $X/\mathcal{D}$ (because of how $V_\alpha,V_\beta$ were constructed) and are disjoint. Thus, $X/\mathcal{D}$ is Hausdorff as desired. </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>**Corollary 1**: For $X$ a compact Hausdorff space and $\mathcal{D} = <span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$ a decomposition of $X$, $\mathcal{D}$ is USC if and only if $X/\mathcal{D}$ is Hausdorff. </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>*Proof*: One direction is exactly the theorem we have just proven, so we just need to show that if $X/\mathcal{D}$ is Hausdorff, then $\mathcal{D}$ is USC. Suppose that $X/\mathcal{D}$ is Hausdorff. Since $X$ is compact Hausdorff and $X/\mathcal{D}$ is Hausdorff, the quotient map $p:X\to X/\mathcal{D}$ is a closed map. Let $U\subset X$ be open such that $U$ contains at least one decomposition element. Let $V$ be the union of all decomposition elements contained in the open set $U.$ Then, $p(V)$ is the complement of $p(X\setminus U)$ so $p(V)$ is open in $X/\mathcal{D}.$ Moreover, $V$ is a union of decomposition elements so $p^{-1}(p(V))=V$, i.e. $V$ is also open in $X$. Thus, $\mathcal{D}$ is USC. </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>**Corollary 2**: Let $f:X\to Y$ be a surjective continuous map of compact Hausdorff spaces. Then, $<span class="sc">\{</span>f^{-1}(y)\mid y\in Y<span class="sc">\}</span>$ is a USC decomposition of $X$. </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>*Proof*: Since $X,Y$ are compact Hausdorff, $f$ is a quotient map and every fiber is compact. Moreovoer, $Y$ being Hausdorff means we can apply Corollary 1 to get that $<span class="sc">\{</span>f^{-1}(y)\mid y\in Y<span class="sc">\}</span>$ is USC. </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Before tackling the main theorem, we need one more key lemma about USC decompositions which will do most of the work for us in proving the main theorem. </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>**Key Lemma**: Let $X$ be a compact Hausdorff space and let $\mathcal{D}=<span class="sc">\{</span>C_\alpha<span class="sc">\}</span>$ be a USC decomposition of $X.$ Let $\mathcal{D}'$ be the decomposition whose elements are the connected components of the elements of $\mathcal{D}.$ Then, $\mathcal{D}'$ is also USC. </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>*Proof*: Let $C_\alpha'\in \mathcal{D}'$ be a connected component of some $C_\alpha\in \mathcal{D}$ and suppose that $C_\alpha'\subset U$ for some open $U\subset X.$ Because $C_\alpha$ is compact and Hausdorff, there exists a set $D$ which is clopen in $C_\alpha$ such that $C_\alpha'\subset D\subset (U\cap C_\alpha).$ The set $D$ is open in $C_\alpha$ so there exists an open $U_D\subset X$ such that $D = U_D\cap C_\alpha.$ Moreover, $D$ is contained in $U$ so we can assume that $U_D\subset U$ (if not just intersect them). Because $D$ is clopen in $C_\alpha,$ $D = \overline{U_D}\cap C_\alpha$ as well. In particular, this means that $(\overline{U_D}\setminus U_D)\cap C_\alpha = \emptyset.$ Define $U^* = U_D\cup (X\setminus \overline{U_D})$ and note that $U^*$ is a disjoint union of two open sets and it contains $C_\alpha.$ Let $V$ be the union of all the elements in $\mathcal{D}$ which are contained in $U^*.$ Since $\mathcal{D}$ is USC, $V$ is open in $X$. Let $V'=V\cap U_D$ so $V'$ is open and contains $C_\alpha'.$ Suppose that $C_\beta'$ is a component of some $C_\beta\in \mathcal{D}$ such that $C_\beta$ intersects $V'$ non-trivially. By construction, $C_\beta$ must be contained within $V.$ Moreover, $C_\beta'$ is connected and intersects with $U_D$ so $C_\beta'$ must be contained in $U_D.$ Thus, $C_\beta'\subset V'\subset U_D\subset U.$ The open set $V'$ therefore demonstrates that $\mathcal{D}'$ is USC. </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>**Definition**: A continuous map $f:X\to Y$ is monotone if all of its fibers are connected. </span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>**Definition**: A continuous map $f:X\to Y$ is light if all of its fibers are totally disconnected. </span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>We now have all of the ingredients we need to state and prove the Monotone-Light Factorization theorem: </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>**Theorem (Monotone-Light Factorization)**: Let $f:X\to Y$ be a continuous mapping of compact Hausdorff spaces. Then, there exists a third compact Hausdorff space $Z$ and continuous maps $m:X\to Z$ and $l:Z\to Y$ such that $f = l\circ m$, $m$ is monotone, and $l$ is light. </span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>*Proof*: Let $\mathcal{D}$ be the decomposition of $X$ given by the connected components of the fibers of $f.$ Corollary 2 and our Key Lemma guarantee that this is a USC decomposition of $X$. Let $Z$ be the quotient space $X/\mathcal{D}$ and let $m:X\to Z$ be the quotient map. The space $Z$ is compact Hausdorff by our previous theorem and $m$ is monotone by construction. There is a natural map $l:Z\to Y$ which just takes a component of the fiber $f^{-1}(y)$ to the point $y.$ The map $l$ is light because the collection of components of a fiber $f^{-1}(y)$ will be totally disconnected in the quotient space $Z = X/\mathcal{D}.$</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>**References**:</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Danny Calegari's Point Set-Topology Course at UChicago Winter 2023. </span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Decompositions of Manifolds by Robert J. Daverman.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
