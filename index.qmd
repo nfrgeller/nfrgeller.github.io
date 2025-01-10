@@ -1,7 +1,8 @@
 ---
 title: "Noah Geller"
 subtitle: "Math ---> Data Science"
-# page-layout: full
+page-layout: full
+code-tools: false
 about: 
   template: solana
   image: mysite-assets/profile.jpg

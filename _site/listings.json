@@ -2,12 +2,12 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/blog/cayley.html",
-      "/blog/boosting.html",
-      "/blog/monotone-light.html",
-      "/blog/EM.html",
       "/blog/ensemblelearningaveragingreducesvaraition.html",
-      "/blog/underspecificationandrandomseeds.html"
+      "/blog/underspecificationandrandomseeds.html",
+      "/blog/boosting.html",
+      "/blog/cayley.html",
+      "/blog/monotone-light.html",
+      "/blog/EM.html"
     ]
   }
 ]
