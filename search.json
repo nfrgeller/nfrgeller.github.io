@@ -24,22 +24,29 @@
     "objectID": "resume.html#education",
     "href": "resume.html#education",
     "title": "Resume",
-    "section": "1 Education",
-    "text": "1 Education\nThe University of Chicago (2024-2025)  MS in Data Science\nThe University of Chicago (2020-2024)  BA in Mathematics (with honors)"
+    "section": "Education",
+    "text": "Education\nThe University of Chicago (2024-2025)  MS in Data Science (GPA: 3.90)\nRelevant Coursework: Foundations of Machine Learning and AI I-II, High Dimensioanl Time Series Analysis, Machine Learning on Graphs, Groups, and Manifolds, Data Systems and Design.\nThe University of Chicago (2020-2024)  BA in Mathematics, with honors (GPA: 3.78)\nRelevant Coursework: Graduate Abstract Algebra I-II-III, Honors Analysis in Rn I-II-III, Optimization, Dynamical Systems, Differentiable Manifolds and Integration on Manifolds, Algebraic Topology, Algebraic Geometry, Complex Analysis, Mathematical Probability, Topics in Analysis, Point-Set Topology, Quantum Mechanics I-II."
+  },
+  {
+    "objectID": "resume.html#technical-skills",
+    "href": "resume.html#technical-skills",
+    "title": "Resume",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\nProficient in:\n\nPython (Numpy, pandas, scikit-learn, PyTorch, JAX, matplotlib)\nSQL (MySQL)\nGit (GitHub)\nLaTeX\nQuarto"
   },
   {
     "objectID": "resume.html#experience",
     "href": "resume.html#experience",
     "title": "Resume",
-    "section": "2 Experience",
-    "text": "2 Experience\n\nUniversity of Chicago Mathematics REU (Summer 2024) Apprentice Program Mentor  Mentored three undergraduate students and advised them in writing expository research papers.\nUniversity of Chicago Mathematics REU (Summer 2023) Full Program Participant  Worked with a graduate student mentor on writing an expository research paper at the intersection of algebraic topology and algebraic geometry. Paper: Andre-Quillen (Co)Homology and the Cotangent Complex\nUniversity of Chicago Department of Mathematics (Winter and Spring 2023) Directed Reading Program  Worked with a graduate student mentor on an independent study of minimal surfaces and complex manifolds. Gave two public presentations on the relationship between minimal surfaces and complex analysis.\nUniversity of Chicago Department of Mathematics (Autumn 2023) Super Reader (Teaching Assistant)  Held a weekly office hour and graded all assignments for a section of Honors Calculus (IBL).\nUniversity of Chicago Department of Astronomy and Astrophysics (Summer and Autumn 2022) Undergraduate Researcher  Worked with professor Alex Ji on a research project investigating the kinematic properties of a tidally disrupting dwarf galaxy orbiting the Milky Way. Independently conducted scientific data analysis in Python and used machine learning techniques to classify member stars of the dwarf galaxy Antlia II. This research was funded by a grant from the Quad Undergraduate Research Scholars Program.  See research poster.\nUniversity of Chicago Mathematics REU (Summer 2021) Apprentice Program Participant  Worked with a graduate student mentor to write an expository research paper on the asymptotic behavior of smooth dynamical systems in the plane. Paper: Dynamical Systems in the Plane and the Poincare-Bendixson Theorem (cited by 1)"
+    "section": "Experience",
+    "text": "Experience\n\nUniversity of Chicago Mathematics REU (Summer 2024) Apprentice Program Mentor  Mentored three undergraduate students and advised them in writing expository research papers.\nUniversity of Chicago Mathematics REU (Summer 2023) Full Program Participant  Worked with a graduate student mentor on writing an expository research paper at the intersection of algebraic topology and algebraic geometry. Paper: Andre-Quillen (Co)Homology and the Cotangent Complex\nUniversity of Chicago Department of Mathematics (Winter and Spring 2023) Directed Reading Program  Worked with a graduate student mentor on an independent study of minimal surfaces and complex manifolds. Gave two public presentations on the relationship between minimal surfaces and complex analysis.\nUniversity of Chicago Department of Mathematics (Autumn 2023) Super Reader (Teaching Assistant)  Held a weekly office hour and graded all assignments for a section of Honors Calculus (IBL).\nUniversity of Chicago Department of Astronomy and Astrophysics (Summer and Autumn 2022) Undergraduate Researcher  Worked with professor Alex Ji on a research project investigating the kinematic properties of a tidally disrupting dwarf galaxy orbiting the Milky Way. Independently conducted scientific data analysis in Python and used machine learning techniques to classify member stars of the dwarf galaxy Antlia II. This research was funded by a grant from the Quad Undergraduate Research Scholars Program.  See research poster.\nUniversity of Chicago Mathematics REU (Summer 2021) Apprentice Program Participant  Worked with a graduate student mentor to write an expository research paper on the asymptotic behavior of smooth dynamical systems in the plane. Paper: Dynamical Systems in the Plane and the Poincare-Bendixson Theorem (cited by 1)"
   },
   {
     "objectID": "resume.html#grants-and-awards",
     "href": "resume.html#grants-and-awards",
     "title": "Resume",
-    "section": "3 Grants and Awards",
-    "text": "3 Grants and Awards\n\nUniversity of Chicago Advanced Scholars Program (2024-2025)\nDean’s List (2022-2023)\nQuad Undergraduate Resarch Scholars Program (Summer 2022)\nSecond place at the National APPE Intercollegiate Ethics Bowl (2022)"
+    "section": "Grants and Awards",
+    "text": "Grants and Awards\n\nUniversity of Chicago Advanced Scholars Program (2024-2025)\nDean’s List (2022-2023)\nQuad Undergraduate Resarch Scholars Program (Summer 2022)\nSecond place at the National APPE Intercollegiate Ethics Bowl (2022)"
   },
   {
     "objectID": "index.html",
