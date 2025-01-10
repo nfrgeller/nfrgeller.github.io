@@ -2,16 +2,31 @@
 page-layout: full
 title: "Resume"
 toc: false
+code-tools: false
+number-sections: false
 ---
 [Full Resume PDF](mysite-assets/resume.pdf)
 
 ## Education 
 
 **The University of Chicago** (2024-2025) <br>
-MS in Data Science 
+MS in Data Science (GPA: 3.90)
+
+Relevant Coursework: Foundations of Machine Learning and AI I-II, High Dimensioanl Time Series Analysis, Machine Learning on Graphs, Groups, and Manifolds, Data Systems and Design.
 
 **The University of Chicago** (2020-2024) <br>
-BA in Mathematics (with honors)
+BA in Mathematics, with honors (GPA: 3.78)
+
+Relevant Coursework: Graduate Abstract Algebra I-II-III, Honors Analysis in Rn I-II-III, Optimization, Dynamical Systems, Differentiable Manifolds and Integration on Manifolds, Algebraic Topology, Algebraic Geometry, Complex Analysis, Mathematical Probability, Topics in Analysis, Point-Set Topology, Quantum Mechanics I-II.
+
+## Technical Skills
+
+- Proficient in:
+  - Python (Numpy, pandas, scikit-learn, PyTorch, JAX, matplotlib)
+  - SQL (MySQL)
+  - Git (GitHub)
+  - LaTeX
+  - Quarto
 
 ## Experience 
 
@@ -23,7 +38,7 @@ Mentored three undergraduate students and advised them in writing expository res
 **Full Program Participant** <br>
 Worked with a graduate student mentor on writing an expository research paper at the intersection of algebraic topology
 and algebraic geometry.<br>
-Paper: *Andre-Quillen (Co)Homology and the Cotangent Complex*
+Paper: Andre-Quillen (Co)Homology and the Cotangent Complex
 
 
 - **University of Chicago Department of Mathematics** (Winter and Spring 2023)<br>
