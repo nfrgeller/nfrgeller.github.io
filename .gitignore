@@ -9,4 +9,7 @@
 *_cache/
 /env/
 /_site/
-/.venv/
+/.jupyter_cache/
+/.ipynb_checkpoints/
+/.qmd-cache/
+
