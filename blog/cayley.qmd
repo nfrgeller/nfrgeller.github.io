@@ -1,0 +1,62 @@
+---
+execute:
+  echo: true
+  eval: true
+  warning: true
+  error: true 
+title: "Cayley-Hamilton for Modules and Nakayama's Lemma"
+author: "Noah Geller"
+date: "10/12/24"
+categories:
+  - Math
+  - Algebra
+---
+In this note I want to review the Cayley-Hamilton theorem for fields and explain how it easily generalizes to the setting of commutative rings. I will then use this more general form of the theorem to prove Nakayama's lemma.
+
+**Theorem 1**: Let $k$ be a field and let $A\in k^{n\times n}$ be a square matrix with entries in $k$. Let $p\in k[t]$ be the characteristic polynomial of $A$, i.e. $p(t) = \text{det}(t\text{Id}-A)$. Then, $p(A)=0$.
+
+*Proof*: Since every field is contained in its algebraic closure, we can assume without loss of generality that $k$ is algebraically closed. Define a map $\varphi:k^{n\times n}\to k$ which takes a square matrix and evaluates it on its own characteristic polynomial. Because the coefficients of the characteristic polynomial of a matrix are themselves polynomials in the entries of the matrix, $\varphi$ will be a (very complicated) polynomial function $k^{n\times n}\to k$. In particular, the set of matrices which satisfy their own characteristic polynomial is a Zariski closed subset of the affine space $k^{n\times n}$. It thus suffices to show that the theorem holds on a Zariski dense subset of matrices.
+
+Define $\psi:k^n\to k$ to be the map which takes a square matrix to the discriminant of its characteristic polynomial. The map $\psi$ is a polynomial map because the coefficients of the characteristic polynomial are polynomials in the matrix entries. Because we are working over an algebraically closed field, the non-vanishing set $D(\psi) = \{A\in k^{n\times n}\mid \psi(A)\neq 0\}$ is exactly the set of square matrices whose characteristic polynomial has no repeated roots. Every such matrix will have all distinct eigenvalues and will thus be diagonalizable. The subset $D(\psi)\subset k^{n\times n}$ is therefore non-empty and Zariski open, so it is Zariski dense. Since every eigenvalue of a matrix is a root of its characteristic polynomial, $\varphi(A)=0$ for all $A\in D(\psi)$. Because $D(\psi)$ is Zariski dense and $\varphi$ is a polynomial, it follows that $\varphi(A)=0$ for all matrices $A\in k^{n\times n}$, i.e. every matrix is a zero of its own characteristic polynomial as desired. 
+
+Because we have shown that the Cayley-Hamilton theorem holds for all fields, it is straightforward to check that it holds for any ring which is contained inside a field. This shows that it holds for all integral domains, since they sit inside their field of fractions. It turns out this is enough to deduce the general result for arbitrary commutative rings, as we can take advantage of the universal property of $\mathbb{Z}$ as the initial object in the category of commutative rings. 
+
+**Theorem**: Let $R$ be a commutative ring and let $A$ be an $n\times n$ matrix with entries in $R$. Let $p_A(t)\in R[t]$ be the characteristic polynomial of $A,$ i.e. $p_A(t) = \det(t\text{Id}-A)$. Then, $p_A(A)=0$.
+
+*Proof*: Let $S = \mathbb{Z}[\{x_{ij}\}_{i,j=1}^n]$ be the polynomial ring in $n^2$ variables with integer coefficients. Define $\theta:S\to R$ to be the ring homomorphism which sends each indeterminate $x_{ij}$ to the matrix entry $A_{ij}\in R$. Let $X$ be the matrix of indeterminates, so $X_{ij}=x_{ij}$. Because $S$ is a domain, it embeds into its field of fractions, $\mathbb{Q}(\{x_{ij}\}_{i,j=1}^n)$, so $p_X(X)=0$. Because the coefficients of the characteristic polynomial of a matrix are polynomials in the entries of that matrix, we have that 
+
+$$p_A(t) = \theta(s_0)+\dots +\theta(s_{n-1})t^{n-1}+t^n$$
+
+where $s_0,\dots,s_{n-1}\in S$ such that 
+
+$$p_X(t) = s_0+s_1t+\dots+s_{n-1}t^{n-1}+t^n.$$
+
+ We have an induced homomorphism on matrix rings,  $\overline{\theta}:S^{n\times n}\to R^{n\times n}$, which just applies the map $\theta$ on each entry. Because the map $\overline{\theta}$ is a ring homomorphism, we have that 
+
+$$p_A(A) = \theta(s_0)+\dots+A^n = \overline{\theta}(s_0+\dots+X^n) = \overline{\theta}(p_X(X)) = 0$$
+
+which proves the theorem. 
+
+One interesting application of this general form of the Cayley-Hamilton theorem is a nice proof of Nakayama's Lemma. 
+
+**Theorem**: (Nakayama's Lemma) Let $(R,\mathfrak{m})$ be a local ring and $M$ a finitely generated $R$-module such that $\mathfrak{m}M=M$ (or equivalently $M/\mathfrak{m}M=0$). Then, $M=0$.
+
+*Proof*: Let $m_1,\dots,m_n$ be generators for $M$. Then, there are coefficients $a_{ij}\in R$ such that 
+
+$$m_i = \sum_{j=1}^n a_{ij}m_j.$$
+
+By assumption, $M = \mathfrak{m}M$ so we can assume that the coefficients $a_{ij}$ are actually all in the ideal $\mathfrak{m}\subset R.$ Let $A$ be the $n\times n$  square matrix with $A_{ij}=a_{ij}$ and note that the linear map $A:R^n\to R^n$ is a lift of the identity map, $\text{Id}:M\to M$, along the surjective map $R^n\to M$ induced by our choice of generators. Let 
+
+$$p_A(t) = a_0+a_1t+\dots+t^n$$
+
+be the characteristic polynomial of $A$. Since $p_A(A)=0$ in the matrix ring $M_n(R)$, we also have $p_A(\text{Id}_M)=0$ in the ring $\text{End}_R(M)$. Therefore, 
+
+$$(a_0+\dots+a_{n-1}+1)\text{Id}=0.$$
+
+Because $a_0+\dots+a_{n-1}\in \mathfrak{m}$ and $\mathfrak{m}$ is maximal,
+
+$$1+a_0+\dots+a_{n-1}\notin \mathfrak{m}.$$
+
+ We are working in a local ring, so this implies that $1+a_0+\dots+a_{n-1}$ is a unit, so $\text{Id}_M:M\to M$ must be the zero map. Therefore, $M=0$ as desired. 
+
+**Sources**: https://stacks.math.columbia.edu/tag/05G6 and Akhil Mathew's Graduate Algebra II course at UChicago (Winter 2024).

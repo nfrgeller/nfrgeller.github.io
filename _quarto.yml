@@ -1,0 +1,43 @@
+project:
+  type: website
+
+website:
+  title: "Noah Geller"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Blog
+        href: blog.qmd
+format:
+  html:
+    theme: [flatly, theme.scss]
+    # linkcolor: "#4a7d74"
+    linkcolor: "#448891"
+    grid:
+      body-width: 1000px
+    fontsize: 1.25rem
+    smooth-scroll: true
+    toc: true
+    toc-location: left-body 
+    toc-title: Contents
+    number-sections: true
+    code-fold: show
+    code-copy: true 
+    code-tools: true
+    highlight-style: nord
+
+# format:
+#   html:
+#     grid: 
+#       body-width: 1100px
+#     theme: [flatly, theme-dark.scss]
+#     # mainfont: Noto Sans
+#     fontsize: 1.25rem
+#     toc: true
+#     toc-location: left-body 
+#     toc-title: Contents
+#     toc-expand: 2 
+#     code-fold: show
+#     code-copy: true 
+#     code-overflow: scroll
