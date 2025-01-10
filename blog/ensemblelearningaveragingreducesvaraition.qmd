@@ -1,1 +1,0 @@
-motivation for ensemble learning to reduce variation. show how it is cheaper than expensive models like NN and compare the results. 
