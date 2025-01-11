@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog/perceptron.html",
       "/blog/cayley.html",
       "/blog/monotone-light.html"
     ]
