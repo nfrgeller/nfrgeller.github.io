@@ -5,7 +5,7 @@ toc: false
 code-tools: false
 number-sections: false
 ---
-[Full Resume PDF](mysite-assets/resume.pdf)
+<!-- [Full Resume PDF](mysite-assets/resume.pdf) -->
 
 ## Education 
 
