@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "Perceptrons 1: Theory"
 author: "Noah Geller"
 date: "01/10/25"
