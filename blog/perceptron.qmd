@@ -1,0 +1,13 @@
+---
+title: "Perceptrons 1: Theory"
+author: "Noah Geller"
+date: "01/10/25"
+execute:
+  eval: true
+  echo: true
+  warning: true
+  error: true 
+  cache: true 
+---
+
+The perceptron is one of the earliest  

@@ -11,6 +11,9 @@ website:
         href: blog.qmd
 format:
   html:
+    include-in-header:
+      text: |
+        <script defer data-domain="nfrgeller.github.io" src="https://plausible.io/js/script.js"></script>
     theme: [flatly, theme.scss]
     # linkcolor: "#4a7d74"
     linkcolor: "#448891"
