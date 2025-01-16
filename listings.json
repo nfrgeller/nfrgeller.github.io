@@ -3,7 +3,9 @@
     "listing": "/blog.html",
     "items": [
       "/blog/cayley.html",
-      "/blog/monotone-light.html"
+      "/blog/monotone-light.html",
+      "/blog/plat.html",
+      "/blog/poincare.html"
     ]
   }
 ]
