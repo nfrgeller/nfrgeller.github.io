@@ -5,7 +5,6 @@ listing:
   contents: blog
   type: default
   categories: cloud
-  sort: "date desc"
 ---
 
 

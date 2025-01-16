@@ -1,0 +1,13 @@
+---
+title: "Plateau's Problem"
+author: "Noah Geller"
+execute:
+  eval: true
+  echo: true
+  warning: true
+  error: true 
+  cache: true 
+---
+
+![](../mysite-assets/plat.pdf){width=100% height=500}
+
