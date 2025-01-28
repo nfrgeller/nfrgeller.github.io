@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Noah Geller"
+  favicon: mysite-assets/fav.png
   navbar:
     left:
       - text: Home
