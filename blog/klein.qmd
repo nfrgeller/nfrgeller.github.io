@@ -1,0 +1,14 @@
+---
+title: "What does the Klein Bottle have to do with Computer Vision?"
+author: "Noah Geller"
+date: "02/16/25"
+description: Description.
+draft: true
+execute:
+  eval: true
+  echo: true
+  warning: true
+  error: true 
+  cache: true 
+---
+

@@ -6,7 +6,6 @@ execute:
   error: true 
 title: "Cayley-Hamilton for Modules and Nakayama's Lemma"
 author: "Noah Geller"
-date: "10/12/24"
 categories:
   - Math
   - Algebra

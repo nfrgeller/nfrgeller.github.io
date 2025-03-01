@@ -1,0 +1,18 @@
+---
+title: "Laplacian Eigenmaps (Slides)"
+author: "Noah Geller"
+image: false
+categories:
+  - Math
+  - Data Science
+  - ML
+---
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="../mysite-assets/presentation.html" style="border: 1px solid #2e3846;"></iframe>
+
+```
+
+</div>

@@ -8,7 +8,6 @@ execute:
   cache: true
 title: "The EM Algorithm"
 author: "Noah Geller"
-date: "10/12/24"
 categories:
   - Data Science 
   - Statistics 
