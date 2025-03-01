@@ -3,6 +3,7 @@
     "listing": "/blog.html",
     "items": [
       "/blog/cayley.html",
+      "/blog/laplacian-eigenmaps.html",
       "/blog/monotone-light.html",
       "/blog/plat.html",
       "/blog/poincare.html"

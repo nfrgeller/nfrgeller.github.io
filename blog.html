@@ -79,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -172,7 +172,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="Algebra"><span class="quarto-category-count category-cloud-3">Algebra</span></div><div class="category" data-category="Analysis"><span class="quarto-category-count category-cloud-5">Analysis</span></div><div class="category" data-category="Dynamics"><span class="quarto-category-count category-cloud-3">Dynamics</span></div><div class="category" data-category="Math"><span class="quarto-category-count category-cloud-10">Math</span></div><div class="category" data-category="Topology"><span class="quarto-category-count category-cloud-3">Topology</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="Algebra"><span class="quarto-category-count category-cloud-2">Algebra</span></div><div class="category" data-category="Analysis"><span class="quarto-category-count category-cloud-4">Analysis</span></div><div class="category" data-category="Data Science"><span class="quarto-category-count category-cloud-2">Data Science</span></div><div class="category" data-category="Dynamics"><span class="quarto-category-count category-cloud-2">Dynamics</span></div><div class="category" data-category="ML"><span class="quarto-category-count category-cloud-2">ML</span></div><div class="category" data-category="Math"><span class="quarto-category-count category-cloud-10">Math</span></div><div class="category" data-category="Topology"><span class="quarto-category-count category-cloud-2">Topology</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -185,7 +185,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Math,Algebra" data-listing-date-sort="1728709200000" data-listing-file-modified-sort="1736081433704" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="773">
+<div class="quarto-post image-right" data-index="0" data-categories="Math,Algebra" data-listing-file-modified-sort="1740868903956" data-listing-reading-time-sort="4" data-listing-word-count-sort="773">
 <div class="thumbnail">
 <p><a href="./blog/cayley.html" class="no-external"></a></p><a href="./blog/cayley.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -211,17 +211,53 @@ Algebra
 </div>
 </div>
 <div class="metadata">
-<a href="./blog/cayley.html" class="no-external">
-<div class="listing-date">
-Oct 12, 2024
-</div>
+<p><a href="./blog/cayley.html" class="no-external"></a></p><a href="./blog/cayley.html" class="no-external">
 <div class="listing-author">
 Noah Geller
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Math,Topology" data-listing-date-sort="1728709200000" data-listing-file-modified-sort="1736533372711" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1191">
+<div class="quarto-post image-right" data-index="1" data-categories="Math,Data Science,ML" data-listing-file-modified-sort="1740868991536" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
+<div class="thumbnail">
+<p><a href="./blog/laplacian-eigenmaps.html" class="no-external"></a></p><a href="./blog/laplacian-eigenmaps.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./blog/laplacian-eigenmaps.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blog/laplacian-eigenmaps.html" class="no-external">Laplacian Eigenmaps (Slides)</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./blog/laplacian-eigenmaps.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Math'); return false;">
+Math
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Data Science'); return false;">
+Data Science
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ML'); return false;">
+ML
+</div>
+</div>
+<div class="listing-description">
+<a href="./blog/laplacian-eigenmaps.html" class="no-external">
+<iframe class="slide-deck" src="../mysite-assets/presentation.html" style="border: 1px solid #2e3846;"></iframe>
+
+</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./blog/laplacian-eigenmaps.html" class="no-external"></a></p><a href="./blog/laplacian-eigenmaps.html" class="no-external">
+<div class="listing-author">
+Noah Geller
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Math,Topology" data-listing-file-modified-sort="1740868890440" data-listing-reading-time-sort="6" data-listing-word-count-sort="1191">
 <div class="thumbnail">
 <p><a href="./blog/monotone-light.html" class="no-external"></a></p><a href="./blog/monotone-light.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -247,17 +283,14 @@ Topology
 </div>
 </div>
 <div class="metadata">
-<a href="./blog/monotone-light.html" class="no-external">
-<div class="listing-date">
-Oct 12, 2024
-</div>
+<p><a href="./blog/monotone-light.html" class="no-external"></a></p><a href="./blog/monotone-light.html" class="no-external">
 <div class="listing-author">
 Noah Geller
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Math,Analysis" data-listing-file-modified-sort="1737397096961" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<div class="quarto-post image-right" data-index="3" data-categories="Math,Analysis" data-listing-file-modified-sort="1737397096961" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
 <div class="thumbnail">
 <p><a href="./blog/plat.html" class="no-external"></a></p><a href="./blog/plat.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -290,7 +323,7 @@ Noah Geller
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Math,Dynamics,Analysis" data-listing-file-modified-sort="1737397101188" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<div class="quarto-post image-right" data-index="4" data-categories="Math,Dynamics,Analysis" data-listing-file-modified-sort="1737397101188" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
 <div class="thumbnail">
 <p><a href="./blog/poincare.html" class="no-external"></a></p><a href="./blog/poincare.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
