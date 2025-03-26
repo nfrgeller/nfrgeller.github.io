@@ -1,0 +1,13 @@
+---
+title: "Kernel Methods"
+author: "Noah Geller"
+categories:
+  - Data Science 
+  - Statistics 
+  - ML
+draft: true
+---
+
+
+
+
