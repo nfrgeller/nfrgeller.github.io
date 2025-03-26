@@ -10,9 +10,9 @@ number-sections: false
 ## Education 
 
 **The University of Chicago** (2024-2025) <br>
-MS in Data Science (GPA: 3.90)
+MS in Data Science (GPA: 3.95)
 
-Relevant Coursework: Foundations of Machine Learning and AI I-II, High Dimensional Time Series Analysis, Machine Learning on Graphs, Groups, and Manifolds, Data Systems and Design.
+Relevant Coursework: Spectral Methods and Non-Convex Optimization, High Dimensional Time Series Analysis, Stochastic Processes, Machine Learning on Graphs, Groups, and Manifolds, Foundations of Machine Learning and AI I-II, Data Systems and Design.
 
 **The University of Chicago** (2020-2024) <br>
 BA in Mathematics, with honors (GPA: 3.78)

@@ -7,12 +7,12 @@ categories:
   - Data Science
   - ML
 ---
+Click the slides and press `f` to fullscreen them and navigate with the arrow keys. 
 
 <div>
 
 ```{=html}
 <iframe class="slide-deck" src="../mysite-assets/presentation.html" style="border: 1px solid #2e3846;"></iframe>
-
 ```
 
 </div>

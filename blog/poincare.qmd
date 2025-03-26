@@ -12,4 +12,6 @@ categories:
   - Dynamics
   - Analysis
 ---
+Expository paper on the Poincare-Bendixson Theorem. 
+
 ![](../mysite-assets/apprenticePaper.pdf){width=100% height=500}
