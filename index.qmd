@@ -25,12 +25,4 @@ I am currently a student in the new research-based Master's in Data Science (MSD
 
 [Committee on Data Science](https://codas.uchicago.edu/about/)
 
-<!-- blah blah blah `{python}import math`  -->
-<!---->
-<!-- ```{python} -->
-<!-- def f(x): -->
-<!--   return x**2 -->
-<!---->
-<!-- for i in range(10): -->
-<!--   print(i) -->
-<!-- ``` -->
+

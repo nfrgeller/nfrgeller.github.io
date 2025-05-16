@@ -10,6 +10,11 @@ website:
         href: index.qmd
       - text: Blog
         href: blog.qmd
+  announcement: 
+    content: "**Just Launched**: [Physics Journal Picker](https://www.journalpicker.com/), an AI powered academic journal recommendation system."
+    position: below-navbar
+    type: light
+
 format:
   html:
     include-in-header:
