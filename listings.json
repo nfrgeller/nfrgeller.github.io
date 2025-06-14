@@ -3,10 +3,10 @@
     "listing": "/blog.html",
     "items": [
       "/blog/cayley.html",
-      "/blog/laplacian-eigenmaps.html",
       "/blog/monotone-light.html",
+      "/blog/poincare.html",
       "/blog/plat.html",
-      "/blog/poincare.html"
+      "/blog/vector_bundles.html"
     ]
   }
 ]
