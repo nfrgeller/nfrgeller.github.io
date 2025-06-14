@@ -7,6 +7,7 @@ execute:
   warning: true
   error: true 
   cache: true 
+date: 12-01-2022
 categories: 
   - Math
   - Analysis
@@ -14,5 +15,5 @@ categories:
 
 Expository paper on Plateau's Problem and varifolds. 
 
-![](../mysite-assets/plat.pdf){width=100% height=500}
+![](../mysite-assets/plat.pdf){width=100% height=1000}
 

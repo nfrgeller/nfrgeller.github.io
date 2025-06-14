@@ -1,0 +1,18 @@
+---
+execute:
+  echo: true
+  eval: true
+  warning: true
+  error: true 
+title: "Vector Bundles "
+author: "Noah Geller"
+date: "06-01-2023"
+categories:
+  - Math
+  - Topology 
+  - Geometry 
+  - Algebra
+---
+
+
+![](../mysite-assets/vector_bundles.pdf){width=100% height=1000}

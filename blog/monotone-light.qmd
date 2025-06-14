@@ -6,6 +6,7 @@ execute:
   error: true 
 title: "Monotone Light Factorizations"
 author: "Noah Geller"
+date: 04-01-2023
 categories:
   - Math
   - Topology

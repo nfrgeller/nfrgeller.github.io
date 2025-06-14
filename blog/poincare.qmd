@@ -7,6 +7,7 @@ execute:
   warning: true
   error: true 
   cache: true 
+date: 08-01-2021
 categories: 
   - Math
   - Dynamics
@@ -14,4 +15,4 @@ categories:
 ---
 Expository paper on the Poincare-Bendixson Theorem. 
 
-![](../mysite-assets/apprenticePaper.pdf){width=100% height=500}
+![](../mysite-assets/apprenticePaper.pdf){width=100% height=1000}

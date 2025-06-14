@@ -2,6 +2,7 @@
 title: "Laplacian Eigenmaps (Slides)"
 author: "Noah Geller"
 image: false
+draft: true
 categories:
   - Math
   - Data Science

@@ -10,7 +10,7 @@ number-sections: false
 ## Education 
 
 **The University of Chicago** (2024-2025) <br>
-MS in Data Science (GPA: 3.95)
+MS in Data Science (GPA: 3.93)
 
 Relevant Coursework: Spectral Methods and Non-Convex Optimization, High Dimensional Time Series Analysis, Stochastic Processes, Machine Learning on Graphs, Groups, and Manifolds, Foundations of Machine Learning and AI I-II, Data Systems and Design.
 
@@ -22,11 +22,15 @@ Relevant Coursework: Graduate Abstract Algebra I-II-III, Honors Analysis in Rn I
 ## Technical Skills
 
 - Proficient in:
-  - Python (Numpy, pandas, scikit-learn, PyTorch, JAX, matplotlib)
-  - SQL (MySQL)
+  - Python (Flask, Numpy, pandas, scikit-learn, PyTorch, JAX, matplotlib, transformers)
+  - SQL 
   - Git (GitHub)
   - LaTeX
-  - Quarto
+
+- Learning: 
+  - Rust
+  - C++
+  - Typescript
 
 ## Experience 
 
