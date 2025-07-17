@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Noah Geller",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nCayley-Hamilton for Modules and Nakayama’s Lemma\n\n\nMar 1, 2024\n\n\n\n\nMonotone Light Factorizations\n\n\nApr 1, 2023\n\n\n\n\nPoincare-Bendixson\n\n\nAug 1, 2021\n\n\n\n\nPlateau’s Problem\n\n\nDec 1, 2022\n\n\n\n\nML Proof of the Day: A Universal Approximation Theorem\n\n\nJun 28, 2025\n\n\n\n\nVector Bundles\n\n\nJun 1, 2023\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nDate\n\n\n\n\n\n\nCayley-Hamilton for Modules and Nakayama’s Lemma\n\n\nMar 1, 2024\n\n\n\n\nMonotone Light Factorizations\n\n\nApr 1, 2023\n\n\n\n\nPoincare-Bendixson\n\n\nAug 1, 2021\n\n\n\n\nPlateau’s Problem\n\n\nDec 1, 2022\n\n\n\n\nVector Bundles\n\n\nJun 1, 2023\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/poincare.html",
@@ -25,35 +25,28 @@
     "href": "resume.html",
     "title": "Resume",
     "section": "",
-    "text": "The University of Chicago (2024-2025)  MS in Data Science (GPA: 3.93)\nRelevant Coursework: Spectral Methods and Non-Convex Optimization, High Dimensional Time Series Analysis, Stochastic Processes, Machine Learning on Graphs, Groups, and Manifolds, Foundations of Machine Learning and AI I-II, Data Systems and Design.\nThe University of Chicago (2020-2024)  BA in Mathematics, with honors (GPA: 3.78)\nRelevant Coursework: Graduate Abstract Algebra I-II-III, Honors Analysis in Rn I-II-III, Optimization, Dynamical Systems, Differentiable Manifolds and Integration on Manifolds, Algebraic Topology, Algebraic Geometry, Complex Analysis, Mathematical Probability, Topics in Analysis (Geometric Measure Theory), Point-Set Topology, Quantum Mechanics I-II."
+    "text": "The University of Chicago (2024-2025)  MS in Data Science\nRelevant Coursework: Spectral Methods and Non-Convex Optimization, High Dimensional Time Series Analysis, Stochastic Processes, Machine Learning on Graphs, Groups, and Manifolds, Foundations of Machine Learning and AI I-II, Data Systems and Design.\nThe University of Chicago (2020-2024)  BA in Mathematics, with honors\nRelevant Coursework: Graduate Abstract Algebra I-II-III, Honors Analysis in Rn I-II-III, Optimization, Dynamical Systems, Differentiable Manifolds and Integration on Manifolds, Algebraic Topology, Algebraic Geometry, Complex Analysis, Mathematical Probability, Topics in Analysis (Geometric Measure Theory), Point-Set Topology, Quantum Mechanics I-II."
   },
   {
     "objectID": "resume.html#education",
     "href": "resume.html#education",
     "title": "Resume",
     "section": "",
-    "text": "The University of Chicago (2024-2025)  MS in Data Science (GPA: 3.93)\nRelevant Coursework: Spectral Methods and Non-Convex Optimization, High Dimensional Time Series Analysis, Stochastic Processes, Machine Learning on Graphs, Groups, and Manifolds, Foundations of Machine Learning and AI I-II, Data Systems and Design.\nThe University of Chicago (2020-2024)  BA in Mathematics, with honors (GPA: 3.78)\nRelevant Coursework: Graduate Abstract Algebra I-II-III, Honors Analysis in Rn I-II-III, Optimization, Dynamical Systems, Differentiable Manifolds and Integration on Manifolds, Algebraic Topology, Algebraic Geometry, Complex Analysis, Mathematical Probability, Topics in Analysis (Geometric Measure Theory), Point-Set Topology, Quantum Mechanics I-II."
+    "text": "The University of Chicago (2024-2025)  MS in Data Science\nRelevant Coursework: Spectral Methods and Non-Convex Optimization, High Dimensional Time Series Analysis, Stochastic Processes, Machine Learning on Graphs, Groups, and Manifolds, Foundations of Machine Learning and AI I-II, Data Systems and Design.\nThe University of Chicago (2020-2024)  BA in Mathematics, with honors\nRelevant Coursework: Graduate Abstract Algebra I-II-III, Honors Analysis in Rn I-II-III, Optimization, Dynamical Systems, Differentiable Manifolds and Integration on Manifolds, Algebraic Topology, Algebraic Geometry, Complex Analysis, Mathematical Probability, Topics in Analysis (Geometric Measure Theory), Point-Set Topology, Quantum Mechanics I-II."
   },
   {
     "objectID": "resume.html#technical-skills",
     "href": "resume.html#technical-skills",
     "title": "Resume",
     "section": "Technical Skills",
-    "text": "Technical Skills\n\nProficient in:\n\nPython (Flask, Numpy, pandas, scikit-learn, PyTorch, JAX, matplotlib, transformers)\nSQL\nGit (GitHub)\nLaTeX\n\nLearning:\n\nRust\nC++\nTypescript"
+    "text": "Technical Skills\n\nProgramming Languages\n\nPython (PyTorch, Flask, scikit-learn, pandas/polars, transformers, NumPy, matplotlib)\nSQL (PostgreSQL, SQLite)\nTypeScript (D3.js, React)\nLearning C++ and Rust\n\nGit/GitHub\nDocker"
   },
   {
     "objectID": "resume.html#experience",
     "href": "resume.html#experience",
     "title": "Resume",
     "section": "Experience",
-    "text": "Experience\n\nUniversity of Chicago Mathematics REU (Summer 2024) Apprentice Program Mentor  Mentored three undergraduate students and advised them in writing expository research papers.\nUniversity of Chicago Mathematics REU (Summer 2023) Full Program Participant  Worked with a graduate student mentor on writing an expository research paper at the intersection of algebraic topology and algebraic geometry. Paper: Andre-Quillen (Co)Homology and the Cotangent Complex\nUniversity of Chicago Department of Mathematics (Winter and Spring 2023) Directed Reading Program  Worked with a graduate student mentor on an independent study of minimal surfaces and complex manifolds. Gave two public presentations on the relationship between minimal surfaces and complex analysis.\nUniversity of Chicago Department of Mathematics (Autumn 2023) Super Reader (Teaching Assistant)  Held a weekly office hour and graded all assignments for a section of Honors Calculus (IBL).\nUniversity of Chicago Department of Astronomy and Astrophysics (Summer and Autumn 2022) Undergraduate Researcher  Worked with professor Alex Ji on a research project investigating the kinematic properties of a tidally disrupting dwarf galaxy orbiting the Milky Way. Independently conducted scientific data analysis in Python and used machine learning techniques to classify member stars of the dwarf galaxy Antlia II. This research was funded by a grant from the Quad Undergraduate Research Scholars Program.  See research poster.\nUniversity of Chicago Mathematics REU (Summer 2021) Apprentice Program Participant  Worked with a graduate student mentor to write an expository research paper on the asymptotic behavior of smooth dynamical systems in the plane. Paper: Dynamical Systems in the Plane and the Poincare-Bendixson Theorem (cited by 1)"
-  },
-  {
-    "objectID": "resume.html#grants-and-awards",
-    "href": "resume.html#grants-and-awards",
-    "title": "Resume",
-    "section": "Grants and Awards",
-    "text": "Grants and Awards\n\nUniversity of Chicago Advanced Scholars Program (2024-2025)\nDean’s List (2022-2023)\nQuad Undergraduate Resarch Scholars Program (Summer 2022)\nSecond place at the National APPE Intercollegiate Ethics Bowl (2022)"
+    "text": "Experience\n\nNew Muses Project (Summer 2025) Software Engineer Intern  Full-stack Software Engineering Intern (TypeScript).\nUniversity of Chicago, Department of Statistics (Spring-Summer 2025) Research Assistant with Jiaqi Li  Applying techniques from time series and Markov chain theory to machine learning and optimization.\nUniversity of Chicago Mathematics REU (Summer 2024) Apprentice Program Mentor  Mentored three undergraduate students and advised them in writing expository research papers.\nUniversity of Chicago Mathematics REU (Summer 2023) Full Program Participant  Worked with a graduate student mentor on writing an expository research paper at the intersection of algebraic topology and algebraic geometry.\nUniversity of Chicago Department of Mathematics (Winter and Spring 2023) Directed Reading Program  Worked with a graduate student mentor on an independent study of minimal surfaces and complex manifolds. Gave two public presentations on the relationship between minimal surfaces and complex analysis.\nUniversity of Chicago Department of Mathematics (Autumn 2023) Super Reader (Teaching Assistant)  Held a weekly office hour and graded all assignments for a section of Honors Calculus (IBL).\nUniversity of Chicago Department of Astronomy and Astrophysics (Summer and Autumn 2022) Undergraduate Researcher  Worked with professor Alex Ji on a research project investigating the kinematic properties of a tidally disrupting dwarf galaxy orbiting the Milky Way. Independently conducted scientific data analysis in Python and used machine learning techniques to classify member stars of the dwarf galaxy Antlia II. This research was funded by a grant from the Quad Undergraduate Research Scholars Program.  See research poster.\nUniversity of Chicago Mathematics REU (Summer 2021) Apprentice Program Participant  Worked with a graduate student mentor to write an expository research paper on the asymptotic behavior of smooth dynamical systems in the plane."
   },
   {
     "objectID": "index.html",
@@ -75,12 +68,5 @@
     "title": "Plateau’s Problem",
     "section": "",
     "text": "Expository paper on Plateau’s Problem and varifolds."
-  },
-  {
-    "objectID": "blog/universal-approximation-theorem.html",
-    "href": "blog/universal-approximation-theorem.html",
-    "title": "ML Proof of the Day: A Universal Approximation Theorem",
-    "section": "",
-    "text": "Theorem:"
   }
 ]
