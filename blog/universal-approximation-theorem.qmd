@@ -1,0 +1,12 @@
+---
+title: "ML Proof of the Day: A Universal Approximation Theorem"
+author: "Noah Geller"
+date: 06-28-2025
+categories:
+  - ML
+  - Math
+  - Analysis 
+draft: true
+---
+
+**Theorem**: 

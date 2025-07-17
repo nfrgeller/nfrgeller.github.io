@@ -10,29 +10,41 @@ number-sections: false
 ## Education 
 
 **The University of Chicago** (2024-2025) <br>
-MS in Data Science (GPA: 3.93)
+*MS in Data Science*
 
 Relevant Coursework: Spectral Methods and Non-Convex Optimization, High Dimensional Time Series Analysis, Stochastic Processes, Machine Learning on Graphs, Groups, and Manifolds, Foundations of Machine Learning and AI I-II, Data Systems and Design.
 
 **The University of Chicago** (2020-2024) <br>
-BA in Mathematics, with honors (GPA: 3.78)
+*BA in Mathematics, with honors*
 
 Relevant Coursework: Graduate Abstract Algebra I-II-III, Honors Analysis in Rn I-II-III, Optimization, Dynamical Systems, Differentiable Manifolds and Integration on Manifolds, Algebraic Topology, Algebraic Geometry, Complex Analysis, Mathematical Probability, Topics in Analysis (Geometric Measure Theory), Point-Set Topology, Quantum Mechanics I-II.
 
 ## Technical Skills
 
-- Proficient in:
-  - Python (Flask, Numpy, pandas, scikit-learn, PyTorch, JAX, matplotlib, transformers)
-  - SQL 
-  - Git (GitHub)
-  - LaTeX
+- Programming Languages
 
-- Learning: 
-  - Rust
-  - C++
-  - Typescript
+  - Python (PyTorch, Flask, scikit-learn, pandas/polars, transformers, NumPy, matplotlib)
+  
+  - SQL (PostgreSQL, SQLite)
+
+  - TypeScript (D3.js, React) 
+
+  - Learning C++ and Rust
+
+- Git/GitHub
+
+- Docker
 
 ## Experience 
+
+- **New Muses Project** (Summer 2025)<br>
+**Software Engineer Intern** <br>
+Full-stack Software Engineering Intern (TypeScript).
+
+
+- **University of Chicago, Department of Statistics** (Spring-Summer 2025)<br>
+**Research Assistant with Jiaqi Li** <br>
+Applying techniques from time series and Markov chain theory to machine learning and optimization. 
 
 - **University of Chicago Mathematics REU** (Summer 2024)<br>
 **Apprentice Program Mentor** <br>
@@ -41,8 +53,7 @@ Mentored three undergraduate students and advised them in writing expository res
 - **University of Chicago Mathematics REU** (Summer 2023)<br>
 **Full Program Participant** <br>
 Worked with a graduate student mentor on writing an expository research paper at the intersection of algebraic topology
-and algebraic geometry.<br>
-Paper: Andre-Quillen (Co)Homology and the Cotangent Complex
+and algebraic geometry.
 
 
 - **University of Chicago Department of Mathematics** (Winter and Spring 2023)<br>
@@ -66,14 +77,11 @@ See [research poster](https://ugradresearchsymposium.omeka.net/items/show/143).
 - **University of Chicago Mathematics REU** (Summer 2021)<br>
 **Apprentice Program Participant** <br>
 Worked with a graduate student mentor to write an expository research paper on the asymptotic behavior of smooth
-dynamical systems in the plane.<br>
-Paper: Dynamical Systems in the Plane and the Poincare-Bendixson Theorem (cited by 1) 
+dynamical systems in the plane.
 
 
-## Grants and Awards
-- University of Chicago Advanced Scholars Program (2024-2025)
-- Dean's List (2022-2023)
-- Quad Undergraduate Resarch Scholars Program (Summer 2022)
-- Second place at the National APPE Intercollegiate Ethics Bowl (2022)
-
-
+<!-- ## Grants and Awards -->
+<!-- - University of Chicago Advanced Scholars Program (2024-2025) -->
+<!-- - Dean's List (2022-2023) -->
+<!-- - Quad Undergraduate Research Scholars Program (Summer 2022) -->
+<!-- - Second place at the National APPE Intercollegiate Ethics Bowl (2022) -->
